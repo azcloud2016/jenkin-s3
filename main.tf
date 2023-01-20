@@ -6,8 +6,8 @@ provider "aws" {
 }
 # Lines to create a AWS S3 bucket
 
-resource "aws_s3_bucket" "sjt3" {
-  bucket = "sjt3"
+resource "aws_s3_bucket" "sjt3_git" {
+  bucket = "sjt3_git"
 }
 
 #resource "aws_s3_bucket_acl" "c" {
@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "sjt3" {
 resource "aws_s3_bucket_public_access_block" "s3_block" {
   block_public_acls       = true
   block_public_policy     = true
-  bucket                  = aws_s3_bucket.sjt3.id
+  bucket                  = aws_s3_bucket.sjt3_git.id
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
